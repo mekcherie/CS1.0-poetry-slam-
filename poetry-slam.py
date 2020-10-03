@@ -1,57 +1,56 @@
-import random
+# import random
 from random import randint 
-even_lines = []
+
+
 def get_file_lines(filename):
     # "R" it means read
     # reading it and putting in a list 
-    in_file = open(filename, "r")
-    lines = in_file.readlines()
-    in_file.close()
-    return lines 
+        in_file = open(filename, "r")
+    # if you put a number inside the bracket it will print out the line only 
+        lines = in_file.readlines()
+        in_file.close()
+        return lines 
 
 # printing it backwards
-# def lines_printed_backwards(lines_list):
-#     # this reverses a list 
-#     lines_list.reverse()
-#     lines_length = len(lines_list)
-#     for i in range (lines_length):
-#         line = lines_list[i]
-#         line_num = lines_length - i
-#         print(f"{line_num} {line}")
+def lines_printed_backwards(lines_list):
+    # this reverses a list 
+    lines_list.reverse()
+    lines_length = len(lines_list)
+    for i in range (lines_length):
+        line = lines_list[i]
+        line_num = lines_length - i
+        print(f"{line_num} {line}")
+    print('-----------')
 
 # printing it randomly 
 def lines_printed_random(lines_list): 
-    import random 
-    lines_list = random.randint(1, 3)
-    print(lines_list)
-    # lines_list = ['coffee', 'Ethiopia', 'heal', 'land']
-    # for i in range(10):
-        
-    #     print random.randint(1,6) *2
-    #     print 
-    # print("Random element from list:", random.choice(lines_list))
-    pass 
+        for _ in range(len(lines_list)):
+            # print(i)
+            print(lines_list[randint(0,13)])
+        print('-----------')
+
+            # pass 
 
 # printing it by custom 
-# print every line divided with 4
-# def lines_printed_custom(lines_list):
-#     lines_length = len(lines_list)
-#     for i in range(lines_length):
-#         if i % 4 == 0:
-#             print(lines_list[i])
+# print out even lines 
+def lines_printed_custom(lines_list):
 
-# print even lines
-    # even_length = len(even_lines)
-    # for index in range(even_length):
-    #     print(even_lines[index], end="")
+    for i in range(len(lines_list)):
+        # i=value
+        # if i divded by two is the remandinder of 
+        if i % 2 == 0:
+             print(lines_list[i])
+
+    print('-----------')
+
 
 poem_lines = get_file_lines('poem.txt')
-# print(poem_lines)
+print(poem_lines)
 
 
-# lines_printed_backwards(poem_lines)
+lines_printed_backwards(poem_lines)
 
 lines_printed_random(poem_lines)
 
-# lines_printed_custom(poem_lines)
+lines_printed_custom(poem_lines)
 
